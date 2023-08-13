@@ -6,7 +6,7 @@
   <link href="https://wenqian2004.github.io/atom.xml" rel="self"/>
   
   <link href="https://wenqian2004.github.io/"/>
-  <updated>2023-08-13T07:01:42.186Z</updated>
+  <updated>2023-08-13T07:48:14.308Z</updated>
   <id>https://wenqian2004.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo的基础使用方法</title>
+    <link href="https://wenqian2004.github.io/posts/b795fb35.html"/>
+    <id>https://wenqian2004.github.io/posts/b795fb35.html</id>
+    <published>2023-08-12T08:29:42.000Z</published>
+    <updated>2023-08-13T07:48:14.308Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="创建一个新的文章"><a href="#创建一个新的文章" class="headerlink" title="创建一个新的文章"></a>创建一个新的文章</h1><h2 id="git命令"><a href="#git命令" class="headerlink" title="git命令"></a>git命令</h2><h4 id="1-在hexo的文件目录下右键打开Git-Bash-Here"><a href="#1-在hexo的文件目录下右键打开Git-Bash-Here" class="headerlink" title="1. 在hexo的文件目录下右键打开Git Bash Here"></a>1. 在hexo的文件目录下右键打开Git Bash Here</h4><p><img src="2023-08-12-17-21-42.png"></p><h3 id="2-创建文章"><a href="#2-创建文章" class="headerlink" title="2. 创建文章"></a>2. 创建文章</h3><pre class="line-numbers language-none"><code class="language-none">hexo new “标题”//创建一个新的文章<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="3-命令行"><a href="#3-命令行" class="headerlink" title="3. 命令行"></a>3. 命令行</h3><p><strong>命令行</strong> </p><pre class="line-numbers language-none"><code class="language-none">hexo c //清除缓存hexo g //本地更新文章hexo d //上传至GitHub，更新网页//注意当你挂复杂的梯子时候有时会发生hexo d失败，可以执行如下方式解决：git config --global --unset http.proxy//清除代理地址<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="4-完成"><a href="#4-完成" class="headerlink" title="4. 完成"></a>4. 完成</h3>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+    <category term="hexo" scheme="https://wenqian2004.github.io/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo的基础使用方法</title>
