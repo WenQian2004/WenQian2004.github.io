@@ -11,10 +11,18 @@
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Unity-–-漂移汽车项目总结"><a href="#Unity-–-漂移汽车项目总结" class="headerlink" title="Unity – 漂移汽车项目总结"></a>Unity – 漂移汽车项目总结</h1><h2 id="1-项目实现逻辑"><a href="#1-项目实现逻辑" class="headerlink" title="1. 项目实现逻辑"></a>1. 项目实现逻辑</h2><ol><li><p>创建一个名为car的空对象，为car建立基础模型，注意为car轮胎命名后面要用</p></li><li><p>为car添加Rigbody组件（物理组件）</p></li><li><p>新建脚本CarController，（脚本在后文），为脚本赋予相应参数</p></li><li><p>脚本使用了碰撞检测，需要将环境的Layer层设置为Ground，脚本才能正常运行</p></li><li><p>添加Trail（见下图）于后轮抬的位置,为其添加车痕，参数如下<br><img src="https://p.ananas.chaoxing.com/star3/origin/6c6169725c80fd2404d84454db0e6b5f.png"><br><img src="https://p.ananas.chaoxing.com/star3/origin/19b4cf72edb5329fa8bf109187d72ff5.png"><br><img src="https://p.ananas.chaoxing.com/star3/origin/6b4928573897225b413515133d04bed3.png"><br><img src="https://p.ananas.chaoxing.com/star3/origin/83aef1add26411a330d829a26e13d8be.png"></p><h2 id="2-代码层面"><a href="#2-代码层面" class="headerlink" title="2. 代码层面"></a>2. 代码层面</h2><p> using System.Collections;<br> using System.Collections.Generic;<br> using UnityEngine;</p><p> public class CarController : MonoBehaviour<br> {<br> // Settings</p><pre><code> private float MoveSpeed; public float LowSpeed = 100; public float HighSpeed = 180; public float MaxSpeed = 15; public float Drag = 0.98f; public float SteerAngle = 20; public float Traction = 1; public float jumpForce; // Variables private Vector3 MoveForce; private Vector3 velocity = Vector3.zero; private Rigidbody rb; public bool isGround = true; private void Start() {     rb = GetComponent&lt;Rigidbody&gt;(); } // Update is called once per frame void Update() {     // Moving     MoveForce += transform.forward * MoveSpeed * Input.GetAxis("Vertical") * Time.deltaTime;     transform.position += MoveForce * Time.deltaTime;     // Steering     float steerInput = Input.GetAxis("Horizontal");     transform.Rotate(Vector3.up * steerInput * MoveForce.magnitude * SteerAngle * Time.deltaTime);     // Drag and max speed limit     MoveForce *= Drag;     MoveForce = Vector3.ClampMagnitude(MoveForce, MaxSpeed);     // Traction     Debug.DrawRay(transform.position, MoveForce.normalized * 3);     Debug.DrawRay(transform.position, transform.forward * 3, Color.blue);     MoveForce = Vector3.Lerp(MoveForce.normalized, transform.forward, Traction * Time.deltaTime) * MoveForce.magnitude;     if(Input.GetKey(KeyCode.LeftShift))     {         MoveSpeed = HighSpeed;     }     else     {         MoveSpeed = LowSpeed;     }     if(Input.GetKeyDown(KeyCode.Space))     {         Jump();     } } public void Jump() {     if(isGround)     {         isGround = false;         rb.velocity = new Vector2(rb.velocity.x, 0);//施加y方向速度，x方向维持原速         rb.AddForce(new Vector2(rb.velocity.x, jumpForce));     } } // 碰撞检测 private void OnCollisionEnter(Collision collision) {         isGround = true; }</code></pre><p> }</p><h2 id="3-代码讲解"><a href="#3-代码讲解" class="headerlink" title="3. 代码讲解"></a>3. 代码讲解</h2><p>待续。。。</p><h2 id="4-项目拓展"><a href="#4-项目拓展" class="headerlink" title="4. 项目拓展"></a>4. 项目拓展</h2></li><li><p>多人聚会类型</p></li><li><p>跑酷</p></li><li><p>团队碰碰车</p></li><li><p>。。。</p></li></ol>]]></content>
       
       
+      <categories>
+          
+          <category> 游戏篇 </category>
+          
+      </categories>
+      
       
         <tags>
             
             <tag> Unity </tag>
+            
+            <tag> Unity小游戏 </tag>
             
         </tags>
       
